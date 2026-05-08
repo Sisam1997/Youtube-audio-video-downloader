@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ultra Quality Video + MP3 Downloader</title>
+<style>
+:root{--bg:#080d1c;--panel:rgba(255,255,255,.08);--panel2:rgba(255,255,255,.13);--line:rgba(255,255,255,.15);--text:#f8fafc;--muted:#a8b3c7;--blue:#3b82f6;--cyan:#06b6d4;--green:#22c55e;--red:#fb7185}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 8% 0%,rgba(59,130,246,.38),transparent 36%),radial-gradient(circle at 95% 8%,rgba(6,182,212,.32),transparent 34%),var(--bg);padding:24px;overflow-x:hidden}.shell{width:min(1100px,100%);margin:auto;display:grid;gap:20px}.hero{display:grid;grid-template-columns:1fr .95fr;gap:20px}.panel{background:linear-gradient(145deg,var(--panel),rgba(255,255,255,.05));border:1px solid var(--line);border-radius:32px;box-shadow:0 25px 80px rgba(0,0,0,.36);backdrop-filter:blur(20px)}.left{padding:32px}.right{padding:14px;display:grid;align-content:start;min-height:300px;overflow:hidden}.badge{display:inline-flex;gap:10px;align-items:center;background:rgba(59,130,246,.16);border:1px solid rgba(96,165,250,.35);color:#bfdbfe;border-radius:999px;padding:10px 14px;font-size:13px;font-weight:900}h1{font-size:clamp(35px,6vw,68px);line-height:.95;letter-spacing:-.065em;margin:18px 0 15px}.accent{background:linear-gradient(90deg,#fff,#93c5fd,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}p{margin:0;color:var(--muted);line-height:1.7}.form{display:grid;gap:14px;margin-top:25px}.inputWrap{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid var(--line);border-radius:21px;padding:8px 10px;transition:.2s}.inputWrap:focus-within{border-color:#60a5fa;box-shadow:0 0 0 4px rgba(59,130,246,.18)}input,select,button{font:inherit}input{width:100%;background:transparent;border:0;outline:0;color:white;padding:13px;font-size:16px}input::placeholder{color:#768298}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}select{width:100%;appearance:none;background:rgba(255,255,255,.1);color:white;border:1px solid var(--line);border-radius:18px;padding:16px;outline:0;font-weight:800}option{color:#111827;background:white}button{border:0;border-radius:18px;padding:16px 18px;cursor:pointer;font-weight:950;color:white;transition:.2s}button:hover:not(:disabled){transform:translateY(-2px)}button:disabled{opacity:.62;cursor:wait}.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 16px 34px rgba(37,99,235,.28)}.secondary{background:rgba(255,255,255,.12);border:1px solid var(--line)}.hint{font-size:13px;color:#a8b3c7;margin-top:-4px}.status{display:none;border-radius:20px;padding:15px 17px;line-height:1.55;border:1px solid var(--line);word-break:break-word}.status.ok{display:block;background:rgba(34,197,94,.14);color:#bbf7d0}.status.err{display:block;background:rgba(244,63,94,.14);color:#fecdd3}.status.load{display:block;background:rgba(59,130,246,.14);color:#bfdbfe}.health{font-size:13px;color:#b7c2d6}.previewEmpty{text-align:center;color:var(--muted);padding:50px 18px}.play{width:78px;height:78px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-size:32px;box-shadow:0 20px 42px rgba(59,130,246,.34)}.previewCard{display:none}.thumbWrap{position:relative;border-radius:26px;overflow:hidden;background:rgba(0,0,0,.18)}.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.thumbPlay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-size:30px;box-shadow:0 18px 38px rgba(0,0,0,.28)}.videoInfo{padding:14px 8px 2px}.title{font-size:20px;font-weight:950;line-height:1.25;margin-bottom:8px}.meta{font-size:14px;color:var(--muted)}.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tip{padding:18px;border-radius:24px;background:rgba(255,255,255,.075);border:1px solid var(--line);color:var(--muted)}.tip b{display:block;color:white;margin-bottom:6px}@media(max-width:880px){body{padding:16px}.hero{grid-template-columns:1fr}.right{min-height:0}.tips{grid-template-columns:1fr}}@media(max-width:560px){body{padding:12px}.left{padding:22px}.grid2{grid-template-columns:1fr}h1{letter-spacing:-.04em}.thumbPlay,.play{width:64px;height:64px}.badge{font-size:12px}.panel{border-radius:25px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="hero">
+<div class="panel left">
+<span class="badge">▶ 8K / 4K / 2K / HD MP4 + MP3</span>
+<h1>Download video in <span class="accent">ultra quality</span>.</h1>
+<p>Paste a public video link. Select MP3 for audio, or MP4 with Best, 8K, 4K, 2K, 1080p, 720p and more. The main button downloads the file directly.</p>
+<div class="form">
+<label class="inputWrap"><span>🔗</span><input id="url" placeholder="Paste YouTube / Shorts / Reel / TikTok link here..." autocomplete="off"></label>
+<div class="grid2"><select id="mode"><option value="video">MP4 Video</option><option value="audio">MP3 Audio</option></select><select id="quality"><option value="best">Best / Maximum quality</option><option value="4320p">8K / 4320p</option><option value="2160p">4K / 2160p</option><option value="1440p">2K / 1440p</option><option value="1080p">1080p HD</option><option value="720p">720p HD</option><option value="480p">480p</option><option value="360p">360p</option></select></div>
+<div class="grid2"><button id="previewBtn" class="secondary" type="button">Preview link</button><button id="downloadBtn" class="primary" type="button">Download MP4</button></div>
+<div class="hint">Best quality downloads the highest available stream, including 2K/4K/8K when the source has it. FFmpeg merges video + audio into one MP4. MP3 saves audio as .mp3.</div>
+<div class="inputWrap"><span>🍪</span><input id="cookiesFile" type="file" accept=".txt"><button id="cookiesBtn" class="secondary" style="padding:11px 14px;border-radius:14px" type="button">Save</button></div>
+<div id="status" class="status"></div><div id="health" class="health">Checking server...</div>
+</div>
+</div>
+<div class="panel right">
+<div id="emptyPreview" class="previewEmpty"><div class="play">▶</div><h2>Preview appears here</h2><p>Paste a link and preview loads fast with thumbnail.</p></div>
+<div id="previewCard" class="previewCard"><div class="thumbWrap"><img id="thumb" class="thumb" alt="Video thumbnail"><div class="thumbPlay">▶</div></div><div class="videoInfo"><div id="videoTitle" class="title"></div><div id="meta" class="meta"></div></div></div>
+</div>
+</section>
+<section class="tips"><div class="tip"><b>Ultra quality support</b>Best can download 2K, 4K, or 8K when available. Selected quality does not silently fall back to low quality.</div><div class="tip"><b>Direct button download</b>Click Download MP4/MP3 and your browser starts saving the file.</div><div class="tip"><b>Unlimited use</b>Download again and again while the local server is running.</div></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);let timer=null;
+function esc(s){return String(s||'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}
+function setStatus(t,type='load'){const b=$('status');b.className='status '+type;b.innerHTML=t}
+function secondsToTime(x){if(!x)return'Unknown duration';const h=Math.floor(x/3600),m=Math.floor((x%3600)/60),s=String(x%60).padStart(2,'0');return h?`${h}:${String(m).padStart(2,'0')}:${s}`:`${m}:${s}`}
+function setBusy(v){$('previewBtn').disabled=v;$('downloadBtn').disabled=v;$('downloadBtn').textContent=v?'Working...':($('mode').value==='audio'?'Download MP3':'Download MP4')}
+function valid(){const u=$('url').value.trim();if(!/^https?:\/\//i.test(u)){setStatus('Paste a valid video URL first.','err');return null}return u}
+async function loadInfo(silent=false){const url=valid();if(!url)return;if(!silent)setStatus('Loading preview...','load');try{const r=await fetch('/api/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});const d=await r.json();if(!r.ok)throw new Error(d.error||'Preview failed');$('emptyPreview').style.display='none';$('previewCard').style.display='block';$('thumb').src=d.thumbnail||'';$('videoTitle').textContent=d.title||'Untitled video';const qs=(d.heights&&d.heights.length)?` • Available: ${d.heights.join('p, ')}p`:'';$('meta').textContent=`${d.uploader||'Unknown channel'} • ${secondsToTime(d.duration)}${qs}`;if(!silent)setStatus((d.heights&&d.heights.length)?`Preview loaded. Available video qualities: ${d.heights.join('p, ')}p. Click the main download button.`:'Preview loaded. Click the main download button.','ok')}catch(e){if(!silent)setStatus(esc(e.message),'err')}}
+function filenameFromDisposition(header){
+  if(!header) return '';
+  const m = header.match(/filename\*=UTF-8''([^;]+)|filename=\"?([^\";]+)\"?/i);
+  return decodeURIComponent((m && (m[1] || m[2])) || '');
+}
+async function startDownload(){
+  const url=valid(); if(!url) return;
+  setBusy(true);
+  const mode=$('mode').value, quality=$('quality').value;
+  const label = mode==='audio' ? 'MP3 audio' : 'MP4 video '+quality;
+  setStatus(`Preparing ${label}... Do not close this tab. The save will start automatically when the file is ready.`, 'load');
+  try{
+    const r = await fetch('/api/download', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url,mode,quality})});
+    const type = r.headers.get('content-type') || '';
+    if(!r.ok || type.includes('application/json')){
+      let msg='Download failed.';
+      try{ const j=await r.json(); msg=j.error||msg; }catch(e){}
+      throw new Error(msg);
+    }
+    const blob = await r.blob();
+    const name = filenameFromDisposition(r.headers.get('content-disposition')) || (mode==='audio'?'download.mp3':'download.mp4');
+    const objectUrl = URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=objectUrl; a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(objectUrl), 30000);
+    setStatus(`${label} is ready and downloading now.`, 'ok');
+  }catch(e){
+    setStatus(esc(e.message), 'err');
+  }finally{ setBusy(false); }
+}
+async function uploadCookies(){const f=$('cookiesFile').files[0];if(!f){setStatus('Choose cookies.txt first.','err');return}const fd=new FormData();fd.append('cookies',f);setStatus('Saving cookies.txt...','load');try{const r=await fetch('/api/cookies',{method:'POST',body:fd});const d=await r.json();if(!r.ok)throw new Error(d.error||'Could not save cookies');setStatus(esc(d.message),'ok');checkHealth()}catch(e){setStatus(esc(e.message),'err')}}
+async function checkHealth(){try{const r=await fetch('/api/health');const d=await r.json();$('health').textContent=(d.ffmpeg?'✅ FFmpeg detected. ':'⚠️ FFmpeg not detected — install FFmpeg for HD/2K/4K/8K/MP3. ')+(d.cookies?'🍪 cookies.txt saved.':'No cookies.txt saved.')}catch{$('health').textContent='Server not running. Start run_windows.bat first.'}}
+$('previewBtn').onclick=()=>loadInfo(false);$('downloadBtn').onclick=startDownload;$('cookiesBtn').onclick=uploadCookies;$('mode').onchange=()=>{$('quality').disabled=$('mode').value==='audio';$('downloadBtn').textContent=$('mode').value==='audio'?'Download MP3':'Download MP4'};$('url').addEventListener('input',()=>{clearTimeout(timer);if(/^https?:\/\//i.test($('url').value.trim()))timer=setTimeout(()=>loadInfo(true),700)});$('url').addEventListener('keydown',e=>{if(e.key==='Enter')loadInfo(false)});checkHealth();
+</script>
+</body>
+</html>
